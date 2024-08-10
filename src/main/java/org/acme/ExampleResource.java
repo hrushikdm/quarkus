@@ -9,8 +9,12 @@ import jakarta.ws.rs.core.MediaType;
 public class ExampleResource {
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello from Quarkus REST....";
+    @Produces(MediaType.APPLICATION_JSON)
+    public User hello() {
+        User usr = new User();
+
+        usr.setCount(22);
+        usr.setName("HP");
+        return usr;
     }
 }
